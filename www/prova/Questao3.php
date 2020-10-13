@@ -13,9 +13,24 @@
 
 // Retorno o maior produto
 //O maior produto de elementos adjacentes.
-
+$vetor = [5, 6, -4, 2, 3, 2, -23];
 
 function adjacentElementsProduct($inputArray)
 {
-    // CÓDIGO
+    $maior = 0;
+    $produto = 0;
+    for ($i = 0; $i < (count($inputArray) - 1); $i++) {
+        $produto = $inputArray[$i] * $inputArray[$i + 1];
+        if ($produto > $maior) {
+            $maior = $produto;
+            $n1 = $i;
+            $n2 = $i + 1;
+            //var_dump($maior);
+        } else {
+            //var_dump($maior);
+        }
+    }
+    return $maior;
 }
+
+echo adjacentElementsProduct($vetor);

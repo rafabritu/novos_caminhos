@@ -17,7 +17,14 @@
 // Para inputString = "foo(bar)baz(blim)",
 // a saída deve ser "foorabbazmilb"
 
+$inputString = "(bar)";
+
+
 function reverseInParentheses($inputString)
 {
-    // CÓDIGO
+    $bom = explode("(", $inputString);
+    preg_match_all("#\([\w]\)#i", $inputString, $teste);
+    var_dump($teste);
 }
+
+reverseInParentheses($inputString);

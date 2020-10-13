@@ -20,7 +20,15 @@
 // Gisifruno precisa de estátuas de tamanhos 4, 5 e 7
 // ou seja de três estátuas
 
+$statues = [6, 3];
+
 function makeArrayConsecutive2($statues)
 {
-    // CÓDIGO
+    sort($statues);
+    $tot = count($statues) - 1;
+    $maior = $statues[$tot];
+    $count = $maior - count($statues);
+    return $count;
 }
+
+echo makeArrayConsecutive2($statues);

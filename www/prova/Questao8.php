@@ -16,7 +16,33 @@
 // Para $n = 1230, o retorno deve ser  true;
 // Para $n = 239017, o retorno deve ser false;
 
+$n = 261534;
+
 function isLucky($n)
 {
-    // CÓDIGO
+    $separe = str_split($n, 1);
+    $c = count($separe);
+    $metC = $c / 2;
+    //var_dump($c);
+    //var_dump($metC);
+    $soma1 = 0;
+    $soma2 = 0;
+    $i = 0;
+    while ($i < $metC) {
+        $soma1 += $separe[$i];
+        $i++;
+        //var_dump($soma1);
+    }
+    while ($i < $c) {
+        $soma2 += $separe[$i];
+        $i++;
+        //var_dump($soma2);
+    }
+    if ($soma1 == $soma2) {
+        return true;
+    } else {
+        return false;
+    }
 }
+
+var_dump(isLucky($n));
