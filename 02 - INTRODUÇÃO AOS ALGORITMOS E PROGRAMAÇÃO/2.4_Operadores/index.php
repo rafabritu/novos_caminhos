@@ -1,32 +1,32 @@
 <?php
 require __DIR__ . '/../framework/config.php';
-PHPClassName('Aula 2.4 - Operadores');
+PHPClassName('CLASS_TITLE');
 
-
-
-
+/*
+*
+*/
 PHPClassSession('ATRIBUIÇÃO', __LINE__);
 
-$operatorA = 5;
+$A = 5;
 $operators = [
-    "a += 5" => ($operatorA += 5),
-    "a -= 5" => ($operatorA -= 5),
-    "a *= 5" => ($operatorA *= 5),
-    "a /= 5" => ($operatorA /= 5),
+    "A += 5" => ($A += 5),     // A = A + 5   A = 5 + 5      A=10  
+    "A -= 5" => ($A -= 5),       // A = A - 5   A =  10-5       A=5    
+    "A *= 5" => ($A *= 5),    // A = A * 5   A= 5 * 5        A=25    
+    "A /= 5" => ($A /= 5),      // A = A / 5    A= 25/5         A=5     
 ];
 var_dump($operators);
 
 PHPClassSession('COMPARAÇÃO', __LINE__);
 
-$incrementA = 5;
-$incrementB = 5;
+$A = 5;
+$B = 5;
 $increment = [
-    "pós-incremento" => $incrementA++,
-    "res-incremento" => $incrementA,
-    "pré-incremento" => ++$incrementA,
-    "pós-decremento" => $incrementB--,
-    "res-decremento" => $incrementB,
-    "pré-decremento" => --$incrementB
+    "pós-incremento" => $A++,
+    "res-incremento" => $A,
+    "pré-incremento" => ++$A,
+    "pós-decremento" => $B--,
+    "res-decremento" => $B,
+    "pré-decremento" => --$B,
 ];
 
 var_dump($increment);
@@ -34,43 +34,43 @@ var_dump($increment);
 PHPClassSession('LÓGICOS', __LINE__);
 
 // AND
-// TRUE AND TRUE = TRUE   
-// TRUE AND FALSE = FALSE
-// FALSE AND FALSE = FALSE 
+// TRUE AND TRUE = TRUE
+// TRUE AND FALSE= FALSE
+// FALSE AND FALSE= FALSE
 
 // OR
 // TRUE OR TRUE = TRUE
 // TRUE OR FALSE = TRUE
-// FALSE OR FALSE = FALSE
+// FALSE OR FALSE= FALSE
 
 // ! TRUE = FALSE
 // ! FALSE = TRUE
 
-// AND => &&
+// AND => &
 // OR => ||
 
-$logicA = true;
-$logicB = false;
+$A = true;
+$B = false;
 
 $logic = [
-    "a && b" => ($logicA && $logicB),
-    "a || b" => ($logicA || $logicB),
-    "!a" => (!$logicA),
-    "!b" => (!$logicB),
+    "A && B" => ($A && $B),
+    "A || B" => ($A || $B),
+    "! A || B" => !($A || $B),
 ];
 
 var_dump($logic);
 
 PHPClassSession('ARITMETICOS', __LINE__);
 
-$calcA = 5;
-$calcB = 10;
+$A = 10;
+$B = 5;
+
 $calc = [
-    "a + b" => ($calcA + $calcB),
-    "a - b" => ($calcA - $calcB),
-    "a * b" => ($calcA * $calcB),
-    "a / b" => ($calcA / $calcB),
-    "a % b" => ($calcA % $calcB),
+    "A + B" => ($A + $B),
+    "A - B" => ($A - $B),
+    "A * B" => ($A * $B),
+    "A / B" => ($A / $B),
+    "A / B = Resto" => ($A % $B),
 ];
 
 var_dump($calc);

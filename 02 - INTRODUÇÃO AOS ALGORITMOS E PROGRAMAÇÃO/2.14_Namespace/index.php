@@ -2,6 +2,13 @@
 
 declare(strict_types=1);
 require __DIR__ . '/../framework/config.php';
+<<<<<<< HEAD
+PHPClassName('Namespace');
+/*
+*
+*/
+PHPClassSession('', __LINE__);
+=======
 PHPClassName('2.14 Namespace');
 
 
@@ -14,3 +21,4 @@ $appTemplate = new App\Template();
 $webTemplate = new Web\Template();
 
 var_dump($appTemplate, $webTemplate);
+>>>>>>> iuryrepo/master

@@ -1,40 +1,51 @@
 <?php
 require __DIR__ . '/../framework/config.php';
-PHPClassName('Aula 2.6 - Estruturas de Controle');
+PHPClassName('2.6_Estruturas_de_Controle');
 
-
+/*
+*
+*/
 PHPClassSession('IF, ELSEIF, ELSE', __LINE__);
 
-$test = true;
+$A = true;
 
-if ($test) {
-    var_dump(true);
+if ($A) {
+    echo "Verdade";
 } else {
-    var_dump(false);
+    echo "Mentira";
 }
 
-$age = 61;
-
-if ($age < 20) {
+$idade = 45;             //if = Se  Else= Senão  elseif = Senão se
+if ($idade < 20) {
     var_dump("IFTO");
-} elseif ($age > 20 && $age < 50) {
-    var_dump("PROGRAMDOR WEB");
+} elseif ($idade > 20 && $idade < 50) {
+    var_dump("Programador WEB");
 } else {
-    var_dump("NOVOS CAMINHOS");
+    var_dump("Novos Caminhos");
 }
 
 PHPClassSession('ISSET, EMPTY, !', __LINE__);
 
+//ISSET - Verifica se uma variável existe
+
 $time = "Seleção Brasileira";
 
-if (isset($time)) {
-    var_dump("TODO VASCAINO É SOFREDOR");
+if (isset($tiem)) {  //$Time foi criada?
+    var_dump("JESUS É LINDO!");
 } else {
-    var_dump("O PALMEIRAS NÃO TEM MUNDIAL");
+    var_dump("O DIABO NÃO PRESTA!");
 }
 
-if (!empty($time)) {
+//EMPTY - Verifica se uma variável tem valor
+
+if (empty($time)) {  //$Time está vazio?
     var_dump("PROGRAMADOR WEB");
+} else {
+    var_dump("NOVOS CAMINHOS");
+}
+
+if (!empty($time)) {  //Você pode inverter o resultado 
+    var_dump("PROGRAMADOR WEB"); //da verificação usando !
 } else {
     var_dump("NOVOS CAMINHOS");
 }
@@ -45,16 +56,16 @@ $payment = "completed";
 
 switch ($payment) {
     case "billet_printed":
-        var_dump("Boleto Impresso");
+        var_dump("Boleto impresso");
         break;
     case "canceled":
         var_dump("Pagamento cancelado");
         break;
     case "approved":
     case "completed":
-        var_dump("Pagamento aprovado");
+        var_dump("Pagamento Aprovado");
         break;
     default:
-        var_dump("Erro ao processar pgamento");
+        var_dump("Erro ao processar pagamento");
         break;
 }

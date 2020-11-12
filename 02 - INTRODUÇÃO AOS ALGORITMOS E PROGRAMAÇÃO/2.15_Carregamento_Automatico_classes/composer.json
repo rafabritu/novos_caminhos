@@ -1,0 +1,25 @@
+{
+    "name": "rafael/mac",
+    "description": "Curso de Programador WEB",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "Rafael Brito",
+            "email": "rafaelbritohs@gmail.com",
+            "homepage": "https://github.com/rafabritu",
+            "role": "Developer"
+        }
+    ],
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "autoload": {
+        "psr-4": {
+            "source\\": "source/"
+        }
+    },
+
+    "require": {
+        "phpmailer/phpmailer": "v6.1.7"
+    }
+}

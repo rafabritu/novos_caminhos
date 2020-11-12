@@ -1,8 +1,10 @@
 <?php
 require __DIR__ . '/../framework/config.php';
-PHPClassName('Aula 2.5 - Arrays');
+PHPClassName('2.5_Arrays_e_Pilhas');
 
-
+/*
+*
+*/
 PHPClassSession('INDEX ARRAY', __LINE__);
 
 $arrA = array(1, 2, 3);
@@ -11,32 +13,34 @@ var_dump($arrA);
 $arrB = [0, 1, 2, 3];
 var_dump($arrB);
 
-$arrayIndex = [
+$arraynomes = [
     "Iury",
     "Daniel",
     "Luciano"
 ];
 
-$arrayIndex[] = "Fernando";
-$arrayIndex[] = "José roberto";
+$arraynomes[] = "Fernando";
+$arraynomes[] = "José Roberto";
+$arraynomes[] = 50;
 
-var_dump($arrayIndex);
+var_dump($arraynomes);
 
 PHPClassSession('ASSOCIATIVE ARRAY', __LINE__);
 
-$arrayAssoc = [
-    "docente" => "Iury Gomes",
-    "tutor1" => "Fernando",
-    "tutor2" => "Daniel",
-    "tutor3" => "Luciano"
+$arrayIFTO = [
+    "Docente" => "Iury Gomes",
+    "Tutor1" => "Fernando",
+    "Tutor2" => "Daniel",
+    "Tutor3" => "Luciano",
 ];
 
-$arrayAssoc["Supervisor"] = "José Roberto";
-$arrayAssoc["Class"] = "Programador WEB Novos Caminhos";
+$arrayIFTO["Supervisor"] = "José Roberto";
+$arrayIFTO["Turma"] = "Programador WEB Novos Caminhos";
 
-var_dump($arrayAssoc);
+var_dump($arrayIFTO, $arraynomes[3], $arrayIFTO["Tutor3"]);
 
 PHPClassSession('MULTIDIMENSIONAL ARRAY', __LINE__);
+//Vetor com outros vetores dentro
 
 $coordenacao = [
     "Coordenação" => [
@@ -45,33 +49,27 @@ $coordenacao = [
     ]
 ];
 
-$team = [
+$time = [
     $coordenacao,
-    $arrayAssoc,
+    $arrayIFTO,
 ];
 
-var_dump($coordenacao, $team);
+var_dump($time);
 
 PHPClassSession('ARRAY ACCESS', __LINE__);
 
-$team = [
-    "docente" => "Iury",
-    "tutor1" => "Fernando",
-    "tutor2" => "Daniel",
-    "tutor3" => "Luciano",
-    "Supervisor" => "José Roberto"
-];
-
 echo "Equipe Programador WEB" . PHP_EOL;
 
-foreach ($team as $item) {
+foreach ($arrayIFTO as $valor) {
 
-    echo "<p>$item</p>";
+    echo "<p>$valor</p>";
 }
 
 echo "Equipe Programador WEB" . PHP_EOL;
 
-foreach ($team as $key => $value) {
+foreach ($arrayIFTO as $posicao => $valor) {
 
-    echo "<p>$value é o $key do time!</p>";
+    echo "<p>$valor é o $posicao do IFTO!</p>";
 }
+
+echo $arrayIFTO["Tutor2"]; //Mostrar variável específica que está em um vetor

@@ -1,67 +1,98 @@
 <?php
 require __DIR__ . '/../framework/config.php';
-PHPClassName('2.8 - Closures e Generators');
+PHPClassName('2.8_Closures_e_generators');
 
 /*
 *
 */
-PHPClassSession('CLOSURES', __LINE__);
+PHPClassSession('Closures', __LINE__);
 
-$myAge = function ($year) {
-    $age = date("Y") - $year;
-    return "<h5> Você tem $age anos !</h5>";
-};
+//Uma closure é uma variavel com uma função dentro
 
-echo $myAge(1986);
+$media;
 
-$priceBRL = function ($price) {
-    return number_format($price, 2, ",", ".");
-};
-
-echo "<p> Os futuros projetos dos alunos do novos caminhos custarão R$ {$priceBRL(10000)}. Vamos Fechar ?</p>";
-
-$myCart = [];
-$myCart['totalPrice'] = 0;
-
-$cardADD = function ($item, $qtd, $price) use (&$myCart) {
-    $myCart[$item] = $qtd * $price;
-    $myCart["totalPrice"] += $myCart[$item];
-};
-
-$cardADD("INFRA ESTRUTURA DO DESENVOLVIMENTO", 1, 600);
-$cardADD("ALGORITMOS E PROGRAMAÇÃO", 2, 600);
-
-var_dump($myCart);
-
-PHPClassSession('GENERATORS', __LINE__);
-
-$iterator = 400000;
-
-function showDates($days)
+function media($nome, $n1, $n2, $n3, $n4) //Isso é uma função
 {
-    $saveDate = [];
-    for ($day = 1; $day < $days; $day++) {
-        $saveDate[] = date("d/m/Y", strtotime("+{$day}days"));
-    }
-
-    return $saveDate;
+    $media = ($n1 + $n2 + $n3 + $n4) / 4;
+    if ($media >= 7) {
+        echo "$nome foi aprovado com a média de $media. Parabéns!!";
+    } else echo "$nome foi reprovado com a média de $media";
+    echo "<br><br>";
 }
 
-// echo "<div>";
-// foreach (showDates($iterator) as $date) {
-//     echo "<small class='tag'> {$date} </small>" . PHP_EOL;
-// }
-// echo "</div>";
+media("Rafael", 6, 7, 9, 6);
 
-function generatorDates($days)
+media("Clara", 3, 4, 8, 4);
+
+media("Carlos", 10, 10, 10, 10);
+
+$media = function ($nome, $n1, $n2, $n3, $n4) //Isso é uma Closure
 {
-    for ($day = 1; $day < $days; $day++) {
-        yield date("d/m/Y", strtotime("+{$day}days"));
+    $media = ($n1 + $n2 + $n3 + $n4) / 4;
+    if ($media >= 7) {
+        echo "$nome foi aprovado com a média de $media. Parabéns!!";
+    } else echo "$nome foi reprovado com a média de $media";
+    echo "<br><br>";
+};
+
+$media("Igor", 6, 7, 9, 6);
+
+$media("Ben", 3, 4, 8, 4);
+
+$media("Lidia", 10, 10, 10, 10);
+
+
+
+
+$Aluno = "Iury";
+$n1 = 4;
+$n2 = 5;
+$n3 = 10;
+$n4 = 8;
+
+$media = function () use ($Aluno, $n1, $n2, $n3, $n4) //Levando variáveis para dentro da closure
+{
+    $media = ($n1 + $n2 + $n3 + $n4) / 4;
+    if ($media >= 7) {
+        echo "$Aluno foi aprovado com a média de $media. Parabéns!!";
+    } else echo "$Aluno foi reprovado com a média de $media";
+    echo "<br><br>";
+};
+
+$media();
+
+$Aluno = "George";
+$n1 = 1;
+$n2 = 10;
+$n3 = 2;
+$n4 = 9;
+
+$media = function ($nome, $n1, $n2, $n3, $n4) //Levando variáveis para dentro da closure 2
+{
+    $media = ($n1 + $n2 + $n3 + $n4) / 4;
+    if ($media >= 7) {
+        echo "$nome foi aprovado com a média de $media. Parabéns!!";
+    } else echo "$nome foi reprovado com a média de $media";
+    echo "<br><br>";
+};
+
+$media($Aluno, $n1, $n2, $n3, $n4);
+
+
+PHPClassSession('Generators', __LINE__);
+
+$quant = 30;
+
+function numeros($n) //O foreach executa a função na quantidade de vezes do $quant
+{
+
+    $list = [];
+    for ($cont = 1; $cont <= $n; $cont++) {
+        $list[] = $cont;
     }
+    return $list;
 }
 
-echo "<div style='text-align: center'>";
-foreach (generatorDates($iterator) as $date) {
-    echo "<small class='tag'> {$date} </small>" . PHP_EOL;
+foreach (numeros($quant) as $key => $value) {
+    echo $value . PHP_EOL;
 }
-echo "</div>";

@@ -1,5 +1,13 @@
 <?php
 
+<<<<<<< HEAD
+class User
+{
+    private $firstName;
+    private $lastName;
+    private $email;
+
+=======
 /**
  * Undocumented class
  */
@@ -19,10 +27,26 @@ class User
      *
      * @return string
      */
+>>>>>>> iuryrepo/master
     public function getFirstName()
     {
         return $this->firstName;
     }
+<<<<<<< HEAD
+    /**
+     * Definir valor de firstName
+     * 
+     * @param string $firstName
+     * @return object
+     */
+
+    public function setFirstName(string $firstName)
+    {
+        $this->firstName = filter_var($firstName, FILTER_SANITIZE_STRING);
+        return $this;
+    }
+
+=======
 
     /**
      * Definir o valor da propriedade firstName
@@ -42,11 +66,19 @@ class User
      *
      * @return string
      */
+>>>>>>> iuryrepo/master
     public function getLastName()
     {
         return $this->lastName;
     }
 
+<<<<<<< HEAD
+    public function setLastName(string $lastName)
+    {
+        $this->lastName = filter_var($lastName, FILTER_SANITIZE_STRING);
+    }
+
+=======
     /**
      * Definir valor da propriedade lastName
      *
@@ -65,10 +97,27 @@ class User
      *
      * @return string
      */
+>>>>>>> iuryrepo/master
     public function getEmail()
     {
         return $this->email;
     }
+<<<<<<< HEAD
+    /**
+     * Receber email e filtrar
+     *
+     * @param string $em
+     * @return bool
+     */
+    public function setEmail(string $em)
+    {
+        if (filter_var($em, FILTER_VALIDATE_EMAIL)) {
+            $this->email = $em;
+            return true;
+        } else {
+            return false;
+            $this->email = null;
+=======
 
     /**
      * Definir valor da propriedade email
@@ -84,6 +133,7 @@ class User
         } else {
             $this->email = null;
             return false;
+>>>>>>> iuryrepo/master
         }
         return $this;
     }

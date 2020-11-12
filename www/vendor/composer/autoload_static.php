@@ -4,7 +4,11 @@
 
 namespace Composer\Autoload;
 
+<<<<<<< HEAD
+class ComposerStaticInit171c44c65c9c33fdf87e0d9aaa8292b7
+=======
 class ComposerStaticInit790e89dd3f5738b2ac3ed5e1e6ff0d33
+>>>>>>> iuryrepo/master
 {
     public static $prefixLengthsPsr4 = array (
         'c' => 
@@ -23,8 +27,13 @@ class ComposerStaticInit790e89dd3f5738b2ac3ed5e1e6ff0d33
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+<<<<<<< HEAD
+            $loader->prefixLengthsPsr4 = ComposerStaticInit171c44c65c9c33fdf87e0d9aaa8292b7::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit171c44c65c9c33fdf87e0d9aaa8292b7::$prefixDirsPsr4;
+=======
             $loader->prefixLengthsPsr4 = ComposerStaticInit790e89dd3f5738b2ac3ed5e1e6ff0d33::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit790e89dd3f5738b2ac3ed5e1e6ff0d33::$prefixDirsPsr4;
+>>>>>>> iuryrepo/master
 
         }, null, ClassLoader::class);
     }
