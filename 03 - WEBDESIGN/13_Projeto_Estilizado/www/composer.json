@@ -1,0 +1,31 @@
+{
+<<<<<<< HEAD
+    "name": "rafael/mac",
+=======
+    "name": "iuryprof/ifto",
+>>>>>>> iuryrepo/master
+    "description": "Curso de Programador WEB",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+<<<<<<< HEAD
+            "name": "Rafael Brito",
+            "email": "rafaelbritohs@gmail.com",
+            "homepage": "https://github.com/rafabritu",
+=======
+            "name": "Iury Gomes de Oliveira",
+            "email": "iury.oliveira@ifto.edu.br",
+            "homepage": "https://github.com/iurygdeoliveira",
+>>>>>>> iuryrepo/master
+            "role": "Developer"
+        }
+    ],
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "autoload": {
+        "psr-4": {
+            "classes\\": "classes/"
+        }
+    }
+}
